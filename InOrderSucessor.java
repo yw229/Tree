@@ -35,7 +35,7 @@ public class InOrderSucessor {
 					 break ;
 			 } */
                           next = e.parent ;
-			if ( next.left ==null)
+			if ( next.left ==null) // e was the only right child
 				next = next.parent ;
 
 
