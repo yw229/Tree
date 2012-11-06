@@ -28,10 +28,10 @@ public class isSymmetricTree
         //Random ran = new Random()
         
         Tree t = new Tree(5) ;
-         t.setLeft( new Tree(4)) ;
-         t.setRight(new Tree(4)) ;
-         t.left.setLeft(new Tree(3)) ;
-         t.right.setRight(new Tree(3));
+         t.setLeft( new TreeNode(4)) ;
+         t.setRight(new TreeNode(4)) ;
+         t.left.setLeft(new TreeNode(3)) ;
+         t.right.setRight(new TreeNode(3));
       /*  for (int i = 0 ; i < array.length ; i ++ )
         {
             t.insertInOrder(array[i]) ;
