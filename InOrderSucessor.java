@@ -27,13 +27,19 @@ public class InOrderSucessor {
 		 else // (e.parenet !=null && e.right == null ,)
 		 {
 			 next = e.parent ;
-			 while ( next !=null )
+			/* while ( next !=null )
 			 {
 				 next = e.parent ;
 				 e = next ;
 				 if ( next.left ==e)
 					 break ;
-			 } 
+			 } */
+                          next = e.parent ;
+			if ( next.left ==null) // e was the only right child
+				next = next.parent ;
+
+
+
 		 }
 		 return next ;
 		 
