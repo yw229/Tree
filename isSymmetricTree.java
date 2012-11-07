@@ -2,7 +2,7 @@ package Question4;
 
 public class isSymmetricTree
 {
-    public static boolean isSymTree (Tree r)
+    public static boolean isSymTree (TreeNode r)
     {
         if(r == null) return false ;
         if (r.left ==null && r.right == null) return true ;
@@ -12,7 +12,7 @@ public class isSymmetricTree
                 
        
     }
-    public static boolean isSysm(Tree l, Tree r)
+    public static boolean isSysm(TreeNode l, TreeNode r)
     {
         if (l == null && r == null )
             return true ;
@@ -27,7 +27,7 @@ public class isSymmetricTree
         
         //Random ran = new Random()
         
-        Tree t = new Tree(5) ;
+        TreeNode t = new TreeNode(5) ;
          t.setLeft( new TreeNode(4)) ;
          t.setRight(new TreeNode(4)) ;
          t.left.setLeft(new TreeNode(3)) ;
