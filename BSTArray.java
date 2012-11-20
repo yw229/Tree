@@ -32,7 +32,7 @@ public class BSTArray {
 	        for (int i : a) {
 	    		if (i < a[0])
 	    		aleft.add(i);
-	    		else 
+	    		else if(i>a[0])
 	    		aright.add(i);
 	    		// left array and right array BST
 	    		}
@@ -40,7 +40,7 @@ public class BSTArray {
 	    		for (int j : b) {
 	    		if (j < b[0])
 	    		bleft.add(j);
-	    		else 
+	    		else if(j>b[0])
 	    		bright.add(j);
 	    		// 
 	    		}
