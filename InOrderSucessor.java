@@ -26,8 +26,7 @@ public class InOrderSucessor {
 		 }
 		 else // (e.parenet !=null && e.right == null ,)
 		 {
-			 next = e.parent ;
-			/* while ( next !=null )
+		  /* while ( next !=null )
 			 {
 				 next = e.parent ;
 				 e = next ;
