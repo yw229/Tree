@@ -7,7 +7,7 @@ public class isSymmetricTree
         if(r == null) return false ;
         if (r.left ==null && r.right == null) return true ;
         
-        if (r.left ==null && r.right == null) return true ;
+        //if (r.left ==null && r.right == null) return true ;
             return isSysm(r.left,r.right) ; // root all left side is mirror of it's right side ?
                 
        
