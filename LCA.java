@@ -30,9 +30,19 @@ public class LCA {
 		 int diff = hb - ha ; // find difference 
 		 /*
 		  * The node which is closer to root is always diff ahead of the deeper node */
-		 for(int h = 0 ; h < diff ; h ++)
-			 b= b.parent ; // b reach the same level with a
-		//return b;
+		int diff = hb-ha ; 
+       		 if(diff > 0) // b is deeper than a 
+        	{  
+        		for(int i = 0 ; i < diff ; i ++)
+           			 b = b.parent ; // b reach a level
+        	}
+        	else
+       		 {
+        		diff = ha-hb ;
+        		for(int i = 0 ; i < diff ; i ++)
+                		a = a.parent ; // a reach b level
+        	}
+            
 		 while(true)
 		 {
 			 if( a==b) return a ; // find the common root 
@@ -42,6 +52,7 @@ public class LCA {
 		 
 			
 	 }
+	/* 
 	private void swapNode(TreeNode a, TreeNode b) {
 		// TODO Auto-generated method stub
 		int temp = a.data ;
@@ -54,7 +65,7 @@ public class LCA {
 		int temp = ha ;
 		ha = hb ;
 		hb =temp ;
-	}
+	}*/
 	public static void main(String[] args)
     {
         Random ran = new Random() ;
