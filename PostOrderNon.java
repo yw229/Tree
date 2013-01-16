@@ -21,9 +21,11 @@ public class PostOrderNon
             TreeNode current = s1.pop();
             s2.push(current) ;
             if(current.left!=null)
-                s1.push(current.right);
-            if(current.left!=null)
                 s1.push(current.left) ;
+             if(current.right!=null)
+                s1.push(current.right);
+
+
         }
         while(!s2.isEmpty())
         {
