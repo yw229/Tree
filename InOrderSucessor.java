@@ -11,7 +11,11 @@ public class InOrderSucessor {
 	}	
 	public InOrderSucessor ()
 	{
-		
+		//
+		// case 1 : if current node right sub tree is not null or current node is root, then 
+		// we only need to find the leftmost node of the right sub sttree
+		// case 2 : if right sub tree is null, traverse it's ancestry till it reaches a node that is the left
+		// child of a node, that node's parent is the next successor 
 	}
 	public TreeNode FindNextNode(TreeNode e)
 	{
@@ -24,24 +28,13 @@ public class InOrderSucessor {
 			 next = e.mostleft( e.right) ;
 			 //return next ;
 		 }
-		 else // (e.parenet !=null && e.right == null ,)
+		 TreeNode p = e.parent ;
+		 while(p!=null && e == p.right)
 		 {
-		  /* while ( next !=null )
-			 {
-				 next = e.parent ;
-				 e = next ;
-				 if ( next.left ==e)
-					 break ;
-			 } */
-                          next = e.parent ;
-			if ( next.left ==null) // e was the only right child
-				next = next.parent ;
-
-
-
+		 	p= p.parent ;
+		 	e = p ;
 		 }
-		 return next ;
-		 
+		 return p ;
 		 //reutrn next ;
 		}
 		 return null ;
