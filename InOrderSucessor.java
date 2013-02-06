@@ -28,13 +28,13 @@ public class InOrderSucessor {
 			 next = e.mostleft( e.right) ;
 			 //return next ;
 		 }
-		 TreeNode p = e.parent ;
-		 while(p!=null && e == p.right)
+		  next = e.parent ;
+		 while(next!=null && e == next.right)
 		 {
-		 	p= p.parent ;
-		 	e = p ;
+		 	next= next.parent ;
+		 	e = next ;
 		 }
-		 return p ;
+		 return next ;
 		 //reutrn next ;
 		}
 		 return null ;
