@@ -11,26 +11,30 @@ import java.util.HashMap;
  *     TreeNode(int x) { val = x; }
  * }
  */
-public class ReconstructInPo {
+public class Solution {
     public TreeNode buildTree(int[] inorder, int[] postorder) {
-        // Start typing your Java solution below
-        // DO NOT write main() function
-        HashMap<Integer,Integer> inmap = new HashMap<Integer,Integer>() ;
-        for(int i = 0 ; i < inorder.length; i++)
+        HashMap<Integer, Integer> imap = new HashMap<Integer, Integer>() ;
+        for (int i = 0 ; i < inorder.length ; i++)
         {
-            inmap.put(inorder[i],i) ;
+            imap.put(inorder[i],i) ;
         }
-        return build(inmap,inorder,0,inorder.length-1,postorder,0,postorder.length-1) ;
+        return buildT(imap , inorder,0,inorder.length-1,postorder,0,postorder.length-1);
     }
-    public TreeNode build(HashMap<Integer,Integer> map, int[] inorder,int ins,int ine,
-                          int[] postorder,int poss,int pose )
-    {
-        if(ins>ine || poss>pose)
-        return null ;
-        TreeNode root = new TreeNode(postorder[pose]) ;// last element in postorder is root 
-        int i = map.get(postorder[pose]) ;
-        root.left = build(map,inorder,ins,i-1,postorder,poss,poss+i-ins-1) ; // offset 
-        root.right = build(map,inorder,i+1 ,ine,postorder,poss+i-ins,pose-1) ;
-        return root ;
-    }
+    
+    public TreeNode buildT(HashMap<Integer, Integer> imap,int[] inorder, int inst, int ined, int[] postorder,int posst, int postend)
+        {
+            if(inst>ined || posst >postend)
+                    return null ;
+                    
+            int rootv = postorder[postend];
+            TreeNode root = new TreeNode(rootv) ; 
+            int i = imap.get(rootv) ; 
+            int postleftT = i - inst ; // calculate total on left subtree based on InOrderTrave 
+            int postrightT = ined - i ; // calculate total on right subtree based on InOrderTrave 
+            root.left = buildT(imap,inorder,inst, i-1,postorder,posst,posst+postleftT-1  ) ;
+            root.right = buildT(imap,inorder, i+1,ined,postorder,postend-1-postrightT +1 ,  postend-1 ) ;
+            
+            return root ; 
+                    
+        }
 }
