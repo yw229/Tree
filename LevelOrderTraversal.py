@@ -54,6 +54,18 @@ def levelOrderTravList(root):
 			print("depth is %s"%dep)	
 	
 	return l
+
+#list stores each level's tree node 's data value 
+def levelOrderListPrint(l):
+		result = [] 
+		for nodeList in l:
+			vlist = [] ;
+			for node in nodeList:
+				vlist.append(node.data)
+			result.append(vlist)
+		return result
+		
+				
 		
 			
 if __name__=="__main__":
@@ -79,6 +91,8 @@ if __name__=="__main__":
 		l=levelOrderTravList(root)
 
 		print(len(l))
+
+		print("\n The result of level order traversal is : %s" %levelOrderListPrint(l))
 		
 		
 
